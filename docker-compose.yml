@@ -13,8 +13,8 @@ services:
       - env_file=.env
       - PUID=1000
       - PGID=1000
-      - SERVERURL="${SERVERURL}"            # Public-facing IP address of your router 
-      - SERVERPORT="${SERVERPORT}"          # Exposed port forwarded to this host (UDP)
+      - SERVERURL=${SERVERURL}            # Public-facing IP address of your router 
+      - SERVERPORT=${SERVERPORT}          # Exposed port forwarded to this host (UDP)
       - PEERS=3
       - PEERDNS=auto
       - INTERNAL_SUBNET=10.13.13.0
