@@ -15,8 +15,8 @@ services:
       - PGID=1000
       - SERVERURL=${SERVERURL}            # Public-facing IP address of your router 
       - SERVERPORT=${SERVERPORT}          # Exposed port forwarded to this host (UDP)
-      - PEERS=3
-      - PEERDNS=auto
+      - PEERS=${PEERS}                    # Names of peers e.g. tim,tom,ben
+      - PEERDNS=${PEERDNS}                # Specfiy DNS server IP                   
       - INTERNAL_SUBNET=10.13.13.0
       - ALLOWEDIPS=0.0.0.0/0
       - PERSISTENTKEEPALIVE_PEERS=
@@ -25,5 +25,3 @@ services:
       - ./config:/config
     ports:
       - 51820:51820/udp
-    sysctls:
-      - net.ipv4.conf.all.src_valid_mark=1
